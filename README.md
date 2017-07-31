@@ -14,10 +14,13 @@
     - Docker command คำสั่งใช้งาน docker ที่ใช้งานบ่อย และควรจำ
 - Intermediate
   - Docker Engine
-  - Docker Compose
+  - Docker Compose(v3)
   - Docker Machine
-  - Docker Swarm
-  - Registry Service
+    - Provisioning machine (Manager & Nodes)
+    - Cluster (Swarm Mode)
+    - Docker Stack
+    - Docker Service
+  - Docker Registry (Public & Private Registry)
 - Advance
   - Capabilities
   - Seccomp
