@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  mariadb:
+    image: mariadb:10.2.9
+    container_name: db
+    volumes:
+      - /data/mariadb:/var/lib/mysql
+    env_file:
+      - ./.env
+    networks:
+      - mariadb
+    restart: always
+
+networks:
+  mariadb:
+    driver: bridge

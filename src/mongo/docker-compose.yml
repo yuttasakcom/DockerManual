@@ -9,4 +9,10 @@ services:
       - "27017:27017"
     volumes:
       - /data/mongo:/data/db
+    networks:
+      - mongo
     restart: always
+
+networks:
+  mongo:
+    driver: bridge

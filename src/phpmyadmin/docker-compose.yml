@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7.4-1
+    ports:
+      - "8088:80"
+    networks:
+      - mariadb_mariadb
+    restart: always
+
+networks:
+  mariadb_mariadb:
+    external: true
