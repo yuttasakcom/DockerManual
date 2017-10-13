@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+    networks:
+      - php_php
+    volumes:
+      - ~/workspace/www:/var/www/html
+    restart: always
+
+networks:
+  php_php:
+    external: true

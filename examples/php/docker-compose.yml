@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  php:
+    build: .
+    container_name: php
+    networks:
+      - php
+    volumes:
+      - ~/workspace/www:/var/www/html
+    restart: always
+
+networks:
+  php:
+    driver: bridge
