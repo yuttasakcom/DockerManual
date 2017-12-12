@@ -1,5 +1,5 @@
 ## Docker Manual
-> คู่มือการใช้งาน docker ฉบับ YoProgrammer
+> คู่มือการใช้งาน docker
 
 ## Table of Contents
 - Beginner
@@ -7,6 +7,9 @@
     - แนะนำ ประวัติ ความเป็นมา Docker
     - Tradition Sotfware Development Workflow (Without Docker)
     - Tradition Sotfware Development Workflow (With Docker)
+    - [Install docker engine on Ubuntu](#install-docker-engine-on-ubuntu)
+    - [Install docker compose on Ubuntu](#install-docker-compose-on-ubuntu)
+    - [Install docker machine on Ubuntu](#install-docker-machine-on-ubuntu)
   - Docker Image
     - Docker image คืออะไร สร้าง เก็บ ใช้งาน อย่างไร
     - Dockerfile คืออะไร สร้าง เก็บ ใช้งาน อย่างไร
@@ -38,7 +41,7 @@
 - Play with Docker classroom
   - [Reference](http://training.play-with-docker.com/alacart/)
 
-## Install docker-engine on Ubuntu
+## Install docker engine on Ubuntu
 ```
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update
@@ -65,13 +68,13 @@ sudo usermod -aG docker ${USER}
 su - ${USER}
 ```
 
-## Install docker-compose on Ubuntu
+## Install docker compose on Ubuntu
 ```
 sudo curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-## Install docker-machine on Ubuntu
+## Install docker machine on Ubuntu
 ```
 curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
 chmod +x /tmp/docker-machine &&
