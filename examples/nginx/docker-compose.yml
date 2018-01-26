@@ -2,16 +2,19 @@ version: '3'
 
 services:
 
-  nginx:
+  web:
     build: .
-    ports:
-      - "80:80"
+    image: yuttasakcom/dm-nginx:1.0.0
+    container_name: web
     networks:
-      - php_php
+      - proxy
+      - web
     volumes:
       - ~/workspace/www:/var/www/html
     restart: always
 
 networks:
-  php_php:
+  proxy:
+    external: true
+  web:
     external: true
