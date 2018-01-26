@@ -146,6 +146,13 @@ docker-machine rm your-machine-name
 sudo rm -rf ~/.docker/machine/machines/your-machine-name
 ```
 
+## Docker node
+
+```bash
+# show node
+docker node ls
+```
+
 ## Docker swarm
 
 ```bash
