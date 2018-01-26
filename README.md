@@ -125,7 +125,7 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 
 ## Reference
 
-* [Reference](http://training.play-with-docker.com/alacart/)
+* [training.play-with-docker.com](http://training.play-with-docker.com/alacart/)
 
 ## Tool
 
