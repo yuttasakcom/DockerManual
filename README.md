@@ -9,6 +9,8 @@
 * [Install docker engine on Ubuntu](#install-docker-engine-on-ubuntu)
 * [Install docker compose on Ubuntu](#install-docker-compose-on-ubuntu)
 * [Install docker machine on Ubuntu](#install-docker-machine-on-ubuntu)
+* [Docker machine](#docker-machine)
+  * [Virtualbox](#vitualbox)
 * [Reference](#reference)
 * [Tool](#tool)
 
@@ -123,6 +125,19 @@ sudo chmod +x /usr/local/bin/docker-compose
 curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
 chmod +x /tmp/docker-machine &&
 sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+```
+
+## Docker machine
+
+### Virtualbox
+
+```bash
+# Create manager
+# Reference https://docs.docker.com/machine/drivers/virtualbox/
+docker-machine create -d virtualbox --virtualbox-disk-size=10000 manager
+
+# docker swarm init
+docker swarm init --advertise-addr your-ip-machine
 ```
 
 ## Reference

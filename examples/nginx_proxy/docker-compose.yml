@@ -1,10 +1,10 @@
-version: '3'
+version: '3.1'
 
 services:
 
   proxy:
     build: .
-    image: yuttasakcom/proxy:1.0
+    image: yuttasakcom/dm-proxy:1.0.0
     container_name: proxy
     networks:
       - proxy

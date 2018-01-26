@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  web:
+    image: nginx:1.13.8-alpine
+    container_name: web
+    networks:
+      - "proxy"
+
+networks:
+  proxy:
+    external: true
