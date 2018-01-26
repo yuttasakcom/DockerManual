@@ -1,70 +1,48 @@
 # Docker Manual
-> คู่มือการใช้งาน docker
 
 ## Table of Contents
-- Beginner
-  - [Introduce Docker](#introduce-docker)
-    - แนะนำ ประวัติ ความเป็นมา Docker
-    - Tradition Sotfware Development Workflow (Without Docker)
-    - Tradition Sotfware Development Workflow (With Docker)
-    - [Install docker engine on Ubuntu](#install-docker-engine-on-ubuntu)
-    - [Install docker compose on Ubuntu](#install-docker-compose-on-ubuntu)
-    - [Install docker machine on Ubuntu](#install-docker-machine-on-ubuntu)
-  - Docker Image
-    - Docker image คืออะไร สร้าง เก็บ ใช้งาน อย่างไร
-    - Dockerfile คืออะไร สร้าง เก็บ ใช้งาน อย่างไร
-  - Docker Contianer
-    - Docker container คืออะไร สร้าง ใช้งาน อย่างไร
-    - Docker command คำสั่งใช้งาน docker ที่ใช้งานบ่อย และควรจำ
-- Intermediate
-  - Docker Engine
-  - Docker Compose(v3)
-  - Docker Machine
-    - Provisioning machine (Manager & Nodes)
-    - Cluster (Swarm Mode)
-    - Docker Stack
-    - Docker Service
-  - Docker Registry (Public & Private Registry)
-- Advance
-  - Capabilities
-  - Seccomp
-- [Workshop](#workshop)
-- How to implement on
-  - Amazon Web Service
-  - Google Cloud Platform
-  - DigitalOcean
 
-## Introduce Docker
-- BUILD
-```
-Build an image from the Dockerfile in the current directory and tag the image
-$docker build -t myapp:1.0 .
+* [Concept](#concept)
+  * [Build](#build)
+  * [Ship](#build)
+  * [Run](#build)
 
-List all images that are locally stored with the Docker engine
-$docker images
+## Concept
 
-Delete an image from the local image store
-$docker rmi alpine:3.4
+### Build
+
+```bash
+# Build an image from the Dockerfile in the current directory and tag the image
+docker build -t myapp:1.0 .
+
+# List all images that are locally stored with the Docker engine
+docker images
+
+# Delete an image from the local image store
+docker rmi alpine:3.4
 ```
 
-- SHIP
+### Ship
+
+```bash
+# Pull an image from a registry
+docker pull alpine:3.4
+
+# Retag a local image with a new image name and tag
+docker tag alpine:3.4 myrepo/myalpine:3.4
+
+# Log in to a registry (the Docker Hub by default)
+docker login my.registry.com:8000
+
+# Push an image to a registry
+docker push myrepo/myalpine:3.4
 ```
-Pull an image from a registry
-$docker pull alpine:3.4
 
-Retag a local image with a new image name and tag
-$docker tag alpine:3.4 myrepo/myalpine:3.4
+### Run
 
-Log in to a registry (the Docker Hub by default)
-$docker login my.registry.com:8000
-
-Push an image to a registry
-$docker push myrepo/myalpine:3.4
-```
-
-- RUN
-```
-$ docker run
+```bash
+# Run container
+docker run
   --rm  //remove container automatically after it exits
   --it //connect the container to terminal
   --name web //name the container
@@ -73,41 +51,43 @@ $ docker run
   alpine:3.4 //the image from which the container is instantiated
   /bin/bash //the command to run inside the container
 
-Stop a running container through SIGTERM
-$docker stop web
+# Stop a running container through SIGTERM
+docker stop web
 
-Stop a running container through SIGKILL
-$docker kill web
+# Stop a running container through SIGKILL
+docker kill web
 
-Create an overlay network and specify a subnet
-$docker network create --subnet 10.1.0.0/24
+# Create an overlay network and specify a subnet
+docker network create --subnet 10.1.0.0/24
 --gateway 10.1.0.1 -d overlay mynet
 
-List the networks
-$docker network ls
+# List the networks
+docker network ls
 
-List the running containers
-$docker ps
+# List the running containers
+docker ps
 
-Delete all running and stopped containers
-$docker rm -f $(docker ps -aq)
+# Delete all running and stopped containers
+docker rm -f $(docker ps -aq)
 
-Create a new bash process inside the container and connect it to the terminal
-$docker exec -it web bash
+# Create a new bash process inside the container and connect it to the terminal
+docker exec -it web bash
 
-Print the last 100 lines of a container’s logs
-$docker logs --tail 100 web
+# Print the last 100 lines of a container’s logs
+docker logs --tail 100 web
 ```
 
-## Workshop
-- Playground
-  - [Labs playground winth docker](http://labs.play-with-docker.com/)
+## Reference
 
-- Play with Docker classroom
-  - [Reference](http://training.play-with-docker.com/alacart/)
+* [Reference](http://training.play-with-docker.com/alacart/)
+
+## Tool
+
+* [Labs playground winth docker](http://labs.play-with-docker.com/)
 
 ## Install docker engine on Ubuntu
-```
+
+```bash
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update
 
@@ -134,13 +114,15 @@ su - ${USER}
 ```
 
 ## Install docker compose on Ubuntu
-```
+
+```bash
 sudo curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ## Install docker machine on Ubuntu
-```
+
+```bash
 curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
 chmod +x /tmp/docker-machine &&
 sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
