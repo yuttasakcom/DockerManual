@@ -151,6 +151,9 @@ sudo rm -rf ~/.docker/machine/machines/your-machine-name
 ```bash
 # show node
 docker node ls
+
+# add label
+docker node update --label-add <key>=<value> <node-id>
 ```
 
 ## Docker swarm
