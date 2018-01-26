@@ -4,12 +4,14 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7.4-1
+    depends_on:
+      - mariadb:db
     ports:
       - "8088:80"
     networks:
-      - mariadb_mariadb
+      - db
     restart: always
 
 networks:
-  mariadb_mariadb:
+  db:
     external: true

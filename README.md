@@ -180,6 +180,14 @@ docker service rm service-name
 
 ## Docker stack
 
+```bash
+# create stack
+docker stack deploy -c docker-compose.yml stack-name
+
+# remove stack
+docker stack rm stack-name
+```
+
 ## Reference
 
 * [training.play-with-docker.com](http://training.play-with-docker.com/alacart/)
