@@ -132,7 +132,7 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 ### Virtualbox
 
 ```bash
-# Create manager
+# Provision machine on virtualbox
 # Reference https://docs.docker.com/machine/drivers/virtualbox/
 docker-machine create -d virtualbox --virtualbox-disk-size=10000 manager
 
@@ -141,6 +141,12 @@ docker swarm init --advertise-addr your-ip-machine
 
 # show machine list
 docker-machine ls
+
+# remove machine
+docker-machine rm your-machine-name
+
+# clear cache mahcine
+sudo rm -rf ~/.docker/machine/machines/your-machine-name
 ```
 
 ## Reference
