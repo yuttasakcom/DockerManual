@@ -138,6 +138,9 @@ docker-machine create -d virtualbox --virtualbox-disk-size=10000 manager
 
 # docker swarm init
 docker swarm init --advertise-addr your-ip-machine
+
+# show machine list
+docker-machine ls
 ```
 
 ## Reference
