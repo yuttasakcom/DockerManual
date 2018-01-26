@@ -6,6 +6,9 @@
   * [Build](#build)
   * [Ship](#build)
   * [Run](#build)
+* [Install docker engine on Ubuntu](#install-docker-engine-on-ubuntu)
+* [Install docker compose on Ubuntu](#install-docker-compose-on-ubuntu)
+* [Install docker machine on Ubuntu](#install-docker-machine-on-ubuntu)
 
 ## Concept
 
@@ -77,14 +80,6 @@ docker exec -it web bash
 docker logs --tail 100 web
 ```
 
-## Reference
-
-* [Reference](http://training.play-with-docker.com/alacart/)
-
-## Tool
-
-* [Labs playground winth docker](http://labs.play-with-docker.com/)
-
 ## Install docker engine on Ubuntu
 
 ```bash
@@ -127,3 +122,11 @@ curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machi
 chmod +x /tmp/docker-machine &&
 sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 ```
+
+## Reference
+
+* [Reference](http://training.play-with-docker.com/alacart/)
+
+## Tool
+
+* [Labs playground winth docker](http://labs.play-with-docker.com/)
