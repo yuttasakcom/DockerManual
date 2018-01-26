@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    image: yuttasakcom/dm-nginx:1.0.0
+    container_name: nginx
+    ports:
+      - "80:80"
+    networks:
+      - web
+    restart: always
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile-php
+    image: yuttasakcom/dm-php:1.0.0
+    container_name: php
+    networks:
+      - web
+    #   - db
+    restart: always
+
+  mariadb:
+    image: mariadb:10.2.12
+    container_name: mariadb
+    volumes:
+      - /data/mariadb:/var/lib/mysql
+    env_file:
+      - ./.env
+    # ports:
+    #   - "3306:3306"
+    networks:
+      - web
+    restart: always
+
+networks:
+  web:
+    driver: bridge
+#   db:
+#     external: true

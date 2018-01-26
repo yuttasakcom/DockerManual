@@ -11,6 +11,11 @@ services:
       - db
     volumes:
       - ~/workspace/www:/var/www/html
+    deploy:
+      placement:
+        constraints:
+          - node.labels.tag == node1
+      replicas: 2
     restart: always
 
 networks:
