@@ -10,8 +10,6 @@ services:
       - db-data:/var/lib/mysql/data
     env_file:
       - ./.env
-    ports:
-      - "3306:3306"
     networks:
       - db
     deploy:

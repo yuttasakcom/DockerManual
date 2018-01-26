@@ -8,10 +8,13 @@ services:
     container_name: php
     networks:
       - web
+      - db
     volumes:
       - ~/workspace/www:/var/www/html
     restart: always
 
 networks:
   web:
+    external: true
+  db:
     external: true

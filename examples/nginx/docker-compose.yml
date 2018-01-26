@@ -9,6 +9,7 @@ services:
     networks:
       - proxy
       - web
+      - db
     volumes:
       - ~/workspace/www:/var/www/html
     restart: always
@@ -17,4 +18,6 @@ networks:
   proxy:
     external: true
   web:
+    external: true
+  db:
     external: true
