@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-nginx
-    image: yuttasakcom/dm-nginx:1.0.0
+    image: yuttasakcom/laravel-nginx:1.0.0
     container_name: nginx
     ports:
       - "80:80"
@@ -18,7 +18,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-php
-    image: yuttasakcom/dm-php:1.0.0
+    image: yuttasakcom/laravel-php:1.0.0
     container_name: php
     networks:
       - web
