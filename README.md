@@ -86,6 +86,8 @@ docker logs --tail 100 web
 
 ## Install docker engine on Ubuntu
 
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
+
 ```bash
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update
