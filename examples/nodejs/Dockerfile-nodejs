@@ -1,0 +1,18 @@
+FROM node:9.4.0-alpine
+
+RUN mkdir -p /opt/app
+
+ARG PORT=80
+ENV PORT $PORT
+
+HEALTHCHECK CMD curl -fs http://localhost:$PORT/healthz || exit 1
+
+WORKDIR /opt
+COPY package.json package-lock.json* ./
+RUN npm install && npm cache clear --force
+ENV PATH /opt/node_modules/.bin:$PATH
+
+WORKDIR /opt/app
+COPY . /opt/app
+
+CMD [ "npm", "start" ]
