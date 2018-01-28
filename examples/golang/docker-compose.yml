@@ -6,5 +6,5 @@ services:
     build: .
     image: yuttasakcom/hello-go:1.0.0
     ports:
-      - "80:8080"
+      - "8080:8080"
     restart: always
