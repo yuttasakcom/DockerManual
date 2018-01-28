@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  go:
+    build: .
+    image: yuttasakcom/hello-go:1.0.0
+    ports:
+      - "8080:8080"
+    restart: always
