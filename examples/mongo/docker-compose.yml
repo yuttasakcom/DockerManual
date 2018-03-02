@@ -1,18 +1,21 @@
-version: '3'
+version: '3.5'
 
 services:
 
-  mongo:
-    image: mongo:3.4.9
-    container_name: mongo
+  mongodb:
+    image: mongo:3.6.3
+    container_name: mongodb
     ports:
       - "27017:27017"
     volumes:
-      - /data/mongodb:/data/db
+      - data_mongo:/data/db
     networks:
-      - mongo
+      - db
     restart: always
 
+volumes:
+  data_mongo:
+  
 networks:
-  mongo:
-    driver: bridge
+  db:
+    external: true
