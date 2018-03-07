@@ -8,13 +8,10 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - data_mongo:/data/db
+      - /data/mongodb:/data/db
     networks:
       - db
     restart: always
-
-volumes:
-  data_mongo:
   
 networks:
   db:
