@@ -183,6 +183,9 @@ docker swarm init --advertise-addr your-ip-machine
 
 # show token manager
 docker swarm join-token manager
+
+# help
+docker swarm COMMAND --help
 ```
 
 ## Docker service
