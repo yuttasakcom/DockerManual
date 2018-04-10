@@ -9,4 +9,10 @@ services:
       - "6379:6379"
     volumes:
       - /data/redis:/data
+    networks:
+      - db
     restart: always
+
+networks:
+  db:
+    external: true

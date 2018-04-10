@@ -10,7 +10,6 @@
 * [Install docker compose on Ubuntu](#install-docker-compose-on-ubuntu)
 * [Install docker machine on Ubuntu](#install-docker-machine-on-ubuntu)
 * [Docker machine](#docker-machine)
-  * [Virtualbox](#vitualbox)
 * [Reference](#reference)
 * [Tool](#tool)
 
@@ -139,7 +138,7 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 
 ## Docker machine
 
-### Virtualbox
+> คำสั่งที่ใช้งานบ่อยๆ
 
 ```bash
 # Provision machine on virtualbox
@@ -151,6 +150,16 @@ docker-machine ls
 
 # remove machine
 docker-machine rm your-machine-name
+
+# dm = docker machaine
+docker-machine -h
+docker-machine ssh <dm name>
+docker-machine inspect <dm name>
+docker-machine ip <dm name>
+docker-machine env <dm name>
+
+# help
+docker-machine COMMAND --help
 
 # clear cache mahcine
 sudo rm -rf ~/.docker/machine/machines/your-machine-name
