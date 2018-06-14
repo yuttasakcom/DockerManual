@@ -1,24 +1,15 @@
-version: '3'
+version: '3.5'
 
 services:
 
   mariadb:
-    image: mariadb:10.2.12
+    image: mariadb:10.3.7
     container_name: mariadb
     volumes:
       - /data/mariadb:/var/lib/mysql
-    env_file:
-      - ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=project_c
     ports:
       - "3306:3306"
-    networks:
-      - db
-    deploy:
-      placement:
-        constraints:
-          - node.labels.tag == db
     restart: always
-
-networks:
-  db:
-    external: true
