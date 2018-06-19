@@ -1,18 +1,14 @@
-version: '3'
+version: '3.5'
 
 services:
 
   mongodb:
-    image: mongo:3.6.3
+    image: mongo:3.6.5
     container_name: mongodb
+    env_file:
+      - ./.env
     ports:
       - "27017:27017"
     volumes:
-      - /data/mongodb:/data/db
-    networks:
-      - db
+      - /data/db:/data/db
     restart: always
-  
-networks:
-  db:
-    external: true
